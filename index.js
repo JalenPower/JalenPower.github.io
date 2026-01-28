@@ -153,6 +153,9 @@ function animate() {
   c.fillStyle = 'white';
   c.fillRect(0, 0, canvas.width, canvas.height);
   
+  // Wacht tot alle afbeeldingen geladen zijn
+  if (!player.loaded || !background.loaded) return;
+  
   // Bewaar canvas staat en pas transformaties toe
   c.save();
   c.scale(4, 4); // Vergroot voor pixel art effect

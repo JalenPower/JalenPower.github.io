@@ -11,9 +11,6 @@ function drawStartScreen() {
 
  c.font = '16px Arial';
  c.fillText('Gebruik A en D om te bewegen, W om te springen. Ik heb deze website/game gemaakt om te laten zien wat ik kan in software development dit is mijn cv', canvas.width / 2, canvas.height / 2 + 50);
-
- c.font = '16px Arial';
- c.fillText('Click op P om grootere resolutie te zien', canvas.width / 2, canvas.height / 2 + 80)
 }
 
   
@@ -283,3 +280,4 @@ window.addEventListener('keyup', (event) => {
       break;
   }
 });
+

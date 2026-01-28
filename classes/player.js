@@ -28,8 +28,17 @@ class Player extends Sprite {
     this.lastdirection = 'right';
 
 // Laad alle animatie afbeeldingen
+this.imagesLoaded = 0;
+this.imagesToLoad = Object.keys(this.animations).length;
+
 for (let key in this.animations) {
   const image = new Image();
+  image.onload = () => {
+    this.imagesLoaded++;
+    if (this.imagesLoaded === this.imagesToLoad) {
+      this.loaded = true;
+    }
+  };
   image.src = this.animations[key].imageSrc;
   this.animations[key].image = image;
   };

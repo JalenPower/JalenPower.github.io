@@ -94,22 +94,22 @@ const player = new Player({
       frameBuffer: 3,
 },
 Fallleft: {
-      imageSrc: './sprites/warrior/Fallleft.png',
+      imageSrc: './sprites/warrior/FallLeft.png',
       frameRate: 2,
       frameBuffer: 3,
     },
     Runleft: {
-      imageSrc: './sprites/warrior/Runleft.png',
+      imageSrc: './sprites/warrior/RunLeft.png',
       frameRate: 8,
       frameBuffer: 7,
     },
     Idleleft: {
-      imageSrc: './sprites/warrior/Idleleft.png',
+      imageSrc: './sprites/warrior/IdleLeft.png',
       frameRate: 8,
       frameBuffer: 7,
   },
   Jumpleft: {
-      imageSrc: './sprites/warrior/Jumpleft.png',
+      imageSrc: './sprites/warrior/JumpLeft.png',
       frameRate: 2,
       frameBuffer: 3,
 }
@@ -248,4 +248,5 @@ window.addEventListener('keyup', (event) => {
       break;
   }
 });
+
 

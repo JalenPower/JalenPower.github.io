@@ -94,22 +94,22 @@ const player = new Player({
       frameBuffer: 3,
 },
 Fallleft: {
-      imageSrc: './sprites/warrior/FallLeft.png',
+      imageSrc: './sprites/warrior/Fallleft.png',
       frameRate: 2,
       frameBuffer: 3,
     },
     Runleft: {
-      imageSrc: './sprites/warrior/RunLeft.png',
+      imageSrc: './sprites/warrior/Runleft.png',
       frameRate: 8,
       frameBuffer: 7,
     },
     Idleleft: {
-      imageSrc: './sprites/warrior/IdleLeft.png',
+      imageSrc: './sprites/warrior/Idleleft.png',
       frameRate: 8,
       frameBuffer: 7,
   },
   Jumpleft: {
-      imageSrc: './sprites/warrior/JumpLeft.png',
+      imageSrc: './sprites/warrior/Jumpleft.png',
       frameRate: 2,
       frameBuffer: 3,
 }
@@ -159,13 +159,6 @@ function animate() {
   c.translate(camera.position.x, camera.position.y); // Beweeg voor camera
   // Teken achtergrond
   background.update();
-  // Teken collision blocks (rood)
-  collisionBlocks.forEach((collisionBlock) => {
-    collisionBlock.draw();
-  });
-  platformCollisionBlocks.forEach((platformCollisionBlock) => {
-    platformCollisionBlock.draw();
-  });
 
   // Controleer canvas grenzen en update speler
   player.checkForHorizontalcanvasCollisions();
@@ -248,5 +241,4 @@ window.addEventListener('keyup', (event) => {
       break;
   }
 });
-
 

@@ -1,10 +1,32 @@
+let gameState = 'Start';  
+
+function drawStartScreen() {
+  c.fillStyle = 'black';
+  c.fillRect(0, 0, canvas.width, canvas.height);
+
+  c.fillStyle = 'white';
+  c.font = 'bold 72px Arial';
+  c.textAlign = 'center';
+ c.fillText('Druk op spatie om te starten', canvas.width / 2, canvas.height / 2);
+
+ c.font = '16px Arial';
+ c.fillText('Gebruik A en D om te bewegen, W om te springen. Ik heb deze website/game gemaakt om te laten zien wat ik kan in software development dit is mijn cv', canvas.width / 2, canvas.height / 2 + 50);
+
+ c.font = '16px Arial';
+ c.fillText('Click op P om grootere resolutie te zien', canvas.width / 2, canvas.height / 2 + 80)
+}
+
+  
+  
+  
   // Haal het canvas element en context op
 const canvas = document.querySelector('canvas');
 const c = canvas.getContext('2d');
 
 // Stel canvas afmetingen in
-canvas.width = 1024;
-canvas.height = 576;
+canvas.width = 1536;
+canvas.height = 1024;
+
 
 // Zwaartekracht constante
 const gravity = 0.25;
@@ -152,6 +174,11 @@ function animate() {
   // Maak canvas leeg met witte achtergrond
   c.fillStyle = 'white';
   c.fillRect(0, 0, canvas.width, canvas.height);
+
+  if (gameState === 'Start') {
+    drawStartScreen();
+    return;
+  }
   
   // Wacht tot alle afbeeldingen geladen zijn
   if (!player.loaded || !background.loaded) return;
@@ -217,6 +244,15 @@ animate();
 
 // Luister naar toetsenbord input (indrukken)
 window.addEventListener('keydown', (event) => {
+  // Start het spel met spatiebalk
+  if (event.key === ' ' && gameState === 'Start') {
+    gameState = 'playing';
+    return;
+  }
+  
+  // Alleen game controls als je speelt
+  if (gameState !== 'playing') return;
+  
   switch (event.key) {
     case 'd': // Rechts bewegen
       keys.d.pressed = true;
@@ -235,6 +271,9 @@ window.addEventListener('keydown', (event) => {
 
 // Luister naar toetsenbord input (loslaten)
 window.addEventListener('keyup', (event) => {
+  // Alleen game controls als je speelt
+  if (gameState !== 'playing') return;
+  
   switch (event.key) {
     case 'd':
       keys.d.pressed = false;
@@ -244,4 +283,3 @@ window.addEventListener('keyup', (event) => {
       break;
   }
 });
-

@@ -10,10 +10,10 @@ function drawStartScreen() {
  c.fillText('Druk op spatie om te starten.', canvas.width / 2, canvas.height / 2);
 
  c.font = '16px Arial';
- c.fillText('Gebruik A en D om te bewegen, W om te springen. Ik heb deze website/game gemaakt om te laten zien wat ik kan in software development dit is mijn cv', canvas.width / 2, canvas.height / 2 + 50);
+ c.fillText('Gebruik A en D om te bewegen, W om te springen.', canvas.width / 2, canvas.height / 2 + 50);
 
   c.font = '16px Arial';
-  c.fillText('Gemaakt door Jalen Versteilen. Ik ben 16 ik woon in schagen en ik heb veel interrese in software development.', canvas.width / 2, canvas.height / 2 + 80)
+  c.fillText('Gemaakt door Jalen Versteilen.', canvas.width / 2, canvas.height / 2 + 80)
 }
 
   
@@ -283,6 +283,7 @@ window.addEventListener('keyup', (event) => {
       break;
   }
 });
+
 
 
 
